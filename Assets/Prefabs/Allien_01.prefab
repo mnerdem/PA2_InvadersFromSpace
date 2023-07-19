@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5289054833308377203}
   m_Layer: 0
   m_Name: Allien_01
-  m_TagString: Untagged
+  m_TagString: Allien
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
