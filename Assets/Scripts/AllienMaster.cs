@@ -6,8 +6,8 @@ public class AllienMaster : MonoBehaviour
 {
     public GameObject bulletPreFab;
 
-    private Vector3 hMoveDistance = new Vector3(0.05f, 0, 0);
-    private Vector3 vMoveDistance = new Vector3(0, 0.015f, 0);
+    private Vector3 hMoveDistance = new Vector3(0.05f , 0 , 0);
+    private Vector3 vMoveDistance = new Vector3(0 , 0.15f , 0);
 
     private const float Max_Left = -2.5f;
     private const float Max_Right = 2.5f;
@@ -19,7 +19,18 @@ public class AllienMaster : MonoBehaviour
     private float moveTimer = 0.01f;
     private float moveTime = 0.005f;
 
+    private float shootTimer = 3f;
+    private const float shootTime = 3f;
+
     private const float MaxMoveSpeed = 0.02f;
+
+    [SerializeField] private ObjectPool objectPool = null;
+
+    public GameObject motherShipPrefab;
+    private Vector3 motherShipSpawnPos = new Vector3(3.72f , 3.45f , 0);
+    private float motherShipTimer = 15f;
+    private const float motherShip_Min = 15f;
+    private const float motherShip_Max = 60f;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +49,18 @@ public class AllienMaster : MonoBehaviour
             MoveEnemies();
         }
         moveTimer -= Time.deltaTime;
+
+        if (shootTimer <= 0 )
+        {
+            Shoot();
+        }
+        shootTimer -= Time.deltaTime;
+
+        if (motherShipTimer <= 0)
+        {
+            SpawnMotherShip();
+        }
+        motherShipTimer -= Time.deltaTime;
     }
 
     private void MoveEnemies()
@@ -85,8 +108,22 @@ public class AllienMaster : MonoBehaviour
         {
             return f;
         }
+    }
 
+    private void Shoot()
+    {
+        Vector2 pos = allAlliens[Random.Range(0,allAlliens.Count)].transform.position;
 
+        //Instantiate(bulletPreFab, pos, Quaternion.identity); -- object pool öncesi
 
+        GameObject obj = objectPool.GetPooledObject();
+        obj.transform.position = pos;
+
+        shootTimer = shootTime;
+    }
+    private void SpawnMotherShip()
+    {
+        Instantiate(motherShipPrefab, motherShipSpawnPos, Quaternion.identity);
+        motherShipTimer = Random.Range(motherShip_Min,motherShip_Max);
     }
 }

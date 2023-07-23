@@ -6,8 +6,8 @@ public class Player : MonoBehaviour
 {
 
     public GameObject bulletPrefab;
-    public const float maxX = 1.94f;
-    public const float minX = -2f;
+    public const float maxX = 3f;
+    public const float minX = -3f;
     private float speed = 3f;
     private bool isShooting;
     private float cooldown = 0.5f;
