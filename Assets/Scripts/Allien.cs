@@ -10,6 +10,7 @@ public class Allien : MonoBehaviour
 
     public void Kill() 
     {
+        UIManager.UpdateScore(scoreValue);
         AllienMaster.allAlliens.Remove(gameObject);
         Instantiate(explosion, transform.position, Quaternion.identity);
         gameObject.SetActive(false);
