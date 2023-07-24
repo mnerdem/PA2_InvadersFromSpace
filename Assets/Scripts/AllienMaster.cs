@@ -27,7 +27,7 @@ public class AllienMaster : MonoBehaviour
     [SerializeField] private ObjectPool objectPool = null;
 
     public GameObject motherShipPrefab;
-    private Vector3 motherShipSpawnPos = new Vector3(3.72f , 3.45f , 0);
+    private Vector3 motherShipSpawnPos = new Vector3(3.72f , 6.5f , 0);
     private float motherShipTimer = 15f;
     private const float motherShip_Min = 15f;
     private const float motherShip_Max = 60f;
