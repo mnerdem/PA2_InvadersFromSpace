@@ -86,7 +86,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("EnemyBullet"))
         {
-            Debug.Log("player damaged!..");
+            //Debug.Log("player damaged!..");
             collision.gameObject.SetActive(false);
             TakeDamage();
         }

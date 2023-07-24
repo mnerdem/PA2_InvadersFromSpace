@@ -32,6 +32,9 @@ public class AllienMaster : MonoBehaviour
     private const float motherShip_Min = 15f;
     private const float motherShip_Max = 60f;
 
+    private const float Start_y = 1.7f;
+    private bool entering = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -61,6 +64,15 @@ public class AllienMaster : MonoBehaviour
             SpawnMotherShip();
         }
         motherShipTimer -= Time.deltaTime;
+
+        if (entering)
+        {
+            transform.Translate(Vector2.down * Time.deltaTime * 10);
+            if (transform.position.y <= Start_y)
+            {
+                entering = false;
+            }
+        }
     }
 
     private void MoveEnemies()

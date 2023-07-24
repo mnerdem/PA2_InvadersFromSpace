@@ -13,6 +13,12 @@ public class Allien : MonoBehaviour
         UIManager.UpdateScore(scoreValue);
         AllienMaster.allAlliens.Remove(gameObject);
         Instantiate(explosion, transform.position, Quaternion.identity);
+
+        if (AllienMaster.allAlliens.Count == 0)
+        {
+            GameManager.SpawnNewWave();
+        }
+
         gameObject.SetActive(false);
     }
 }
