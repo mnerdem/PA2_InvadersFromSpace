@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4223458107701576207}
   - component: {fileID: 4223458107701576204}
   - component: {fileID: 6502471456170157007}
+  - component: {fileID: -8383329706921547195}
   m_Layer: 0
   m_Name: Allien_02
   m_TagString: Allien
@@ -133,3 +134,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.49767923, y: 0.49465328}
   m_EdgeRadius: 0
+--- !u!114 &-8383329706921547195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4223458107701576205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ec1129132de3144dbc442d6c9864f29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreValue: 125
+  explosion: {fileID: 1666664037891425076, guid: 7c7104672c49c92499cbade311be1176, type: 3}

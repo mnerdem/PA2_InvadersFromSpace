@@ -121,6 +121,7 @@ public class AllienMaster : MonoBehaviour
 
         shootTimer = shootTime;
     }
+    
     private void SpawnMotherShip()
     {
         Instantiate(motherShipPrefab, motherShipSpawnPos, Quaternion.identity);

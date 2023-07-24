@@ -13,6 +13,18 @@ public class FriendlyBullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        if (collision.gameObject.CompareTag("Allien"))
+        {
+            //Destroy(gameObject);
+            collision.gameObject.GetComponent<Allien>().Kill();
+            gameObject.SetActive(false);
+        }
+        if (collision.gameObject.CompareTag("EnemyBullet"))
+        {
+            //Destroy(collision.gameObject);
+            //Destroy(gameObject);
+            collision.gameObject.SetActive(false);
+            gameObject.SetActive(false);
+        }
     }
 }

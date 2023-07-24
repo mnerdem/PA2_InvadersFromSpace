@@ -44,4 +44,19 @@ public class Player : MonoBehaviour
 
         isShooting = false;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("EnemyBullet"))
+        {
+            Debug.Log("player damaged!..");
+            collision.gameObject.SetActive(false);
+            TakeDamage();
+        }
+    }
+
+    public void TakeDamage() 
+    { 
+    
+    }
 }
