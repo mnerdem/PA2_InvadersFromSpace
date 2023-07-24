@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     public ShipStats shipStats;
 
     private Vector2 offScreenPos = new Vector2(0, -20f);
-    private Vector2 startPos = new Vector2(0, -5f);
+    private Vector2 startPos = new Vector2(0, -6f);
 
     private void Start()
     {
